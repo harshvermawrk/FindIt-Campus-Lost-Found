@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindIt | Campus Lost & Found</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">FindIt<span>.</span></a>
+    <span class="tagline">Lost something? Find it here.</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR CAMPUS, CONNECTED</p>
+      <h1>Lost it? <span>Let's find it.</span></h1>
+      <p>Report lost belongings or help someone recover what they found.</p>
+    </section>
+
+    <section class="actions">
+      <button class="action-btn primary" id="lostBtn">+ Report Lost Item</button>
+      <button class="action-btn secondary" id="foundBtn">+ Report Found Item</button>
+    </section>
+
+    <section class="form-panel" id="formPanel" hidden>
+      <h2 id="formTitle">Report an item</h2>
+      <form id="itemForm">
+        <label for="itemName">Item name</label>
+        <input id="itemName" name="itemName" required maxlength="100"
+          placeholder="e.g. Blue water bottle">
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required maxlength="500"
+          placeholder="Describe the item"></textarea>
+
+        <label for="location">Location</label>
+        <input id="location" name="location" required maxlength="150"
+          placeholder="e.g. College library">
+
+        <label for="contact">Contact or recovery instructions</label>
+        <input id="contact" name="contact" required maxlength="150"
+          placeholder="Use demo contact details">
+
+        <div class="form-actions">
+          <button class="action-btn primary" type="submit">Submit report</button>
+          <button class="action-btn cancel" type="button" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="reports">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CAMPUS REPORTS</p>
+          <h2>Browse items</h2>
+        </div>
+        <span id="itemCount">0 reports</span>
+      </div>
+
+      <div class="filters">
+        <input id="searchInput" type="search"
+          placeholder="Search by item or location..." aria-label="Search reports">
+        <select id="statusFilter" aria-label="Filter by status">
+          <option value="all">All reports</option>
+          <option value="lost">Lost items</option>
+          <option value="found">Found items</option>
+        </select>
+      </div>
+
+      <div id="itemsGrid" class="items-grid"></div>
+      <p id="emptyMessage" class="empty-message">No reports yet. Add the first one!</p>
+    </section>
+  </main>
+
+  <footer>FindIt — A student hackathon project</footer>
+</body>
+</html>
